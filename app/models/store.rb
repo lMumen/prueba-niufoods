@@ -9,23 +9,12 @@ class Store < ApplicationRecord
 	def update_status
 		new_status = 0
 		total_devices = devices.count
+		inactive_devices = devices.where(status: 1).count
 		malfunctioning_devices = devices.where(status: 2).count
 		mainteinance_devices = devices.where(status: 3).count
-
-		puts "EQUIPOS MALFUNCIONADOS: #{malfunctioning_devices}"
-		puts "EQUIPOS EN MANTENIMIENTO: #{mainteinance_devices}"
-		puts "TOTAL DE EQUIPOS: #{total_devices}"
-		puts " malfunctioning_devices >= 1 #{ malfunctioning_devices >= 1 }"
-		puts " mainteinance_devices >= (total_devices / 2) #{ mainteinance_devices >= (total_devices / 2) }"
-		puts " malfunctioning_devices >= (total_devices / 2) #{ malfunctioning_devices >= (total_devices / 2) }"
-		puts " mainteinance_devices >= (total_devices*0.8) #{ mainteinance_devices >= (total_devices*0.8) }"
-
-		new_status = 1 if malfunctioning_devices >= 1 || mainteinance_devices >= (total_devices / 2)
-		new_status = 2 if malfunctioning_devices >= (total_devices / 2) || mainteinance_devices >= (total_devices*0.8)
-
-		puts "NUEVO ESTADO: #{new_status}"
+		new_status = 1 if malfunctioning_devices >= 1 || (mainteinance_devices + inactive_devices) >= (total_devices / 2)
+		new_status = 2 if malfunctioning_devices >= (total_devices / 2) || mainteinance_devices >= (total_devices*0.8) || malfunctioning_devices + inactive_devices + mainteinance_devices == total_devices
 		update!(status: new_status)
-
 		{status: new_status, status_name: status_name}
 	end
 

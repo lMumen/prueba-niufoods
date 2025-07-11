@@ -4,6 +4,7 @@ class CreateStores < ActiveRecord::Migration[7.1]
 
       t.string :name
       t.string :address
+      t.string :city
       t.integer :status, default: 0
       t.timestamps
     end

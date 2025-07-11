@@ -15,7 +15,8 @@
 					<p class="card-text" style='margin-top: auto; margin-bottom: auto'><strong>Estado:</strong> <%= @store.spanish_status_name %></p>
 					<div class='status-circle' style="background-color: <%= @store.status_color %>"></div>
 				</div>
-				<p class="card-text"> Dirección: <%= @store.address %></p>
+				<p class="card-text"> <strong>Ciudad:</strong> <%= @store.city %></p>
+				<p class="card-text"> <strong>Dirección:</strong> <%= @store.address %></p>
 			</div>
 		</div>
 	</div>
@@ -30,8 +31,8 @@
 								<p class="card-text" style='margin-top: auto; margin-bottom: auto'><strong>Estado:</strong> <%= device.spanish_status_name %></p>
 								<div class='status-circle' style="background-color: <%= device.status_color %>"></div>
 							</div>
-							<p class="card-text"> Código: <%= device.code %></p>
-							<p class="card-text"> Tipo: <%= device.kind %></p>
+							<p class="card-text"> <strong>Código:</strong> <%= device.code %></p>
+							<p class="card-text"> <strong>Tipo:</strong> <%= device.kind %></p>
 						</div>
 					</div>
 				</div>

@@ -11,7 +11,8 @@
 				 <p class="card-text" style='margin-top: auto; margin-bottom: auto'><strong>Estado:</strong> <%= store.spanish_status_name %></p>
 				 <div class='status-circle' style="background-color: <%= store.status_color %>"></div>
 				</div>
-				<p class="card-text"> Dirección: <%= store.address %></p>
+				<p class="card-text"> <strong>Ciudad:</strong> <%= store.city %></p>
+				<p class="card-text"> <strong>Dirección:</strong> <%= store.address %></p>
 				<a href="<%= store_path(store)%>" class="btn btn-primary">Ver detalles</a>
 			</div>
 			</div>

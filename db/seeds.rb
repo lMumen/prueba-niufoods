@@ -1,7 +1,7 @@
 
-store1 = Store.create!(name: 'Mcdonalds', address: 'Gran Av. José Miguel Carrera 6567')
-store2 = Store.create!(name: 'KFC', address: 'Av. Vicuña Mackenna 4560')
-store3 = Store.create!(name: 'Starbucks', address: 'Av. Apoquindo 1234')
+store1 = Store.create!(name: 'Mcdonalds', address: 'Gran Av. José Miguel Carrera 6567', city: 'Santiago')
+store2 = Store.create!(name: 'KFC', address: 'Av. Vicuña Mackenna 4560', city: 'La Serena')
+store3 = Store.create!(name: 'Starbucks', address: 'Av. Apoquindo 1234', city: 'Concepción')
 
 Device.create!([
   # McDonalds
