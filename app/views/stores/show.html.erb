@@ -1,0 +1,41 @@
+<div class='row'>
+	<div class='col-md-3'>
+		<%= link_to 'Volver a la lista de tiendas', stores_path, class: 'btn btn-primary mt-2 ms-2' %>
+	</div>
+	<div class="col-md-6">
+		<h1 class='title-container' style='text-align: center;'>Detalles de la tienda</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card mx-2 mb-2" style='height: 20rem'>
+			<div class="card-body">
+				<h5 class="card-title"><%= @store.name %></h5>
+				<div class="d-flex">
+					<p class="card-text" style='margin-top: auto; margin-bottom: auto'><strong>Estado:</strong> <%= @store.spanish_status_name %></p>
+					<div class='status-circle' style="background-color: <%= @store.status_color %>"></div>
+				</div>
+				<p class="card-text"> Dirección: <%= @store.address %></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="row">
+			<% @store.devices.each do |device| %>
+				<div class="col-md-4">
+					<div class="card mx-2 mb-2">
+						<div class="card-body">
+							<h5 class="card-title"><%= device.name %></h5>
+							<div class="d-flex">
+								<p class="card-text" style='margin-top: auto; margin-bottom: auto'><strong>Estado:</strong> <%= device.spanish_status_name %></p>
+								<div class='status-circle' style="background-color: <%= device.status_color %>"></div>
+							</div>
+							<p class="card-text"> Código: <%= device.code %></p>
+							<p class="card-text"> Tipo: <%= device.kind %></p>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
