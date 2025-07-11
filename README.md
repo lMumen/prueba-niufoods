@@ -32,6 +32,7 @@ sudo apt install redis-server
 7. Levantar el servidor Redis con `sudo service redis-server start`
 8. Asegurarse de que redis este corriendo con `redis-cli ping`, debe mostrar `PONG`
 9. En otra terminal, correr bundle exec sidekiq para levantar el proceso de sincronización de datos
+10. Ingresar a localhost:3000 para ver el sitio
 
 
 # Descripcion de como funciona el script de simulación de sincronización
