@@ -21,13 +21,6 @@ echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://pack
 sudo apt update
 sudo apt install redis-server
 ```
-
-# Instalacion de postgres en local
-
-1.
-
-Instrucciones para instalar y ejecutar el proyecto
-
 ## Instalación
 
 1. Clonar el repositorio o descargar el archivo comprimido
