@@ -1,6 +1,8 @@
 class Device < ApplicationRecord
 	belongs_to :store
 	validates :name, presence: true
+	validates :code, presence: true
+	validates :kind, presence: true
 
 	STATUSES = %w[active inactive malfunctioning mainteinance] # 0 , 1 , 2 , 3
 	SPANISH_STATUSES = %w[activo inactivo fallando mantenimiento]

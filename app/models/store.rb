@@ -1,6 +1,8 @@
 class Store < ApplicationRecord
 	has_many :devices
 	validates :name, presence: true
+	validates :address, presence: true
+  	validates :city, presence: true
 
 	STATUSES = %w[working warning critical]
 	SPANISH_STATUSES = %w[operativo advertencia crítico]
