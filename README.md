@@ -32,3 +32,9 @@ sudo apt install redis-server
 7. Levantar el servidor Redis con `sudo service redis-server start`
 8. Asegurarse de que redis este corriendo con `redis-cli ping`, debe mostrar `PONG`
 9. En otra terminal, correr bundle exec sidekiq para levantar el proceso de sincronización de datos
+
+
+# Descripcion de como funciona el script de simulación de sincronización
+
+El script simula de forma basica el cambio de estado de los dispositivos de las tiendas creadas en el seed, con una aleatoriedad controlada se van transicionando los estados de los dispositivos como si fuera un escenario real.
+Se comunica por medio de una HTTP POST request a la ruta `/stores/:id/sync_store`
